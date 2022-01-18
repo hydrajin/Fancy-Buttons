@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 // Since we don't HAVE to import React explicitly, we can also just type this:
 //import { useState } from "react";
 
-function AngryButton() {
+function AngryButton(props) {
+  const [anger, setAnger] = useState();
   return (
     <button className="AngryButton">
       {/* When the threshold is not reached */}<span>Don't click me too much! </span>
