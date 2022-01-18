@@ -13,24 +13,22 @@ it can give the state of light as a prop.
 The state of light is now available in two different components! */
 
 function App() {
-  // const [light, setLight] = useState('off');
+  const [light, setLight] = useState('off');
+  const dark = (light === 'off') ? 'dark' : '';
+
   return (
-    <div className={"App dark"}>
+    <div className={`App ${dark}`}>    
       <h1>Fancy Buttons!</h1>
       <section>
         <AngryButton />
         <CounterButton />
-        <LightSwitchButton />
-        {/* <LightSwitchButton light={light} setLight={setLight}/> */}
+        <LightSwitchButton light={light} setLight={setLight}/>
         <TextRepeaterButton />
       </section>
     </div>
   );
-
-  // function LightSwitchButton(props) {
-  //   const {light, setLight} = props;
-  // }
 }
+
 
 /* From the React docs: In React, sharing state is accomplished by moving it up to the 
 closest common ancestor of the components that need it. 
